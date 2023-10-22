@@ -1,0 +1,11 @@
+.tbbtn {
+    width: 50px;
+    height: 50px;    
+    background-color: transparent;
+
+    svg{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}

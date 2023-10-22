@@ -1,0 +1,23 @@
+.btn{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 5px;    
+    width: max-content;
+    padding: 5px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+
+    button{
+        background-color: transparent;
+        padding: 10px;
+        color: white;
+        font-weight: 700;
+        font-size: 15px;
+    }
+
+    &>:nth-child(2){
+        color: white;
+    }
+    
+}

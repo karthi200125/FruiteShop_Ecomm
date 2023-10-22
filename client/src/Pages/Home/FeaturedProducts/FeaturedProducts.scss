@@ -1,0 +1,126 @@
+@import '../../../App.scss';
+
+.featured{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #d6dce381;
+
+    .categoryitemscon{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;        
+        width: max-content;
+        height: 150px;
+        margin-top: 20px;
+        @include mobile{
+            flex-flow: row wrap;
+            width: 350px;                        
+        }
+
+        .catitem{
+            background-color: white;
+            height: 100%;
+            width: 100px;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 30px;
+            box-shadow: 8px 10px 20px rgba(0, 0, 0, 0.453);
+            cursor: pointer;
+
+            img{
+                width: 70px;
+                height: 70px;
+                object-fit: cover;                
+                border-radius: 50%;
+            }
+        }
+    }
+
+    h1{
+        margin-top: 20px;
+    }
+    
+    .products {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        align-items: center; 
+        justify-content: center;         
+        width: 100%;
+        padding: 20px 50px;
+        @include mobile{            
+            margin-top: 150px;
+            display: flex;
+            flex-flow: row wrap;
+        }
+            
+        .product {
+          width: 230px;
+          height: 400px;
+          margin-top: 50px;
+          border-radius: 20px;          
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          background-color: white;
+          box-shadow: 8px 10px 20px rgba(0, 0, 0, 0.453);
+
+          img{
+            width: 210px;
+            height: 280px;
+            margin-top: 10px;
+            border-radius: 15px;
+            object-fit: cover;
+          }
+
+          .bottom{
+            height: 150px;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            h1{
+                font-size: 25px;
+                font-weight: 700;
+            }
+
+            h2{
+                color: red;
+                font-size: 20px;
+            }
+
+            .cartbtn{
+                width: 100%;
+                padding: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                border-radius: 15px;
+                border: 1px solid rgba(0, 0, 0, 0.2);
+                margin-top: 10px;
+                cursor: pointer;
+                
+                button{
+                    background-color: transparent;
+                    padding: 8px;
+                    font-size: 15px;
+                    font-weight: bold;
+                }
+            }
+
+          }
+        }
+      }
+      
+      
+      
+}

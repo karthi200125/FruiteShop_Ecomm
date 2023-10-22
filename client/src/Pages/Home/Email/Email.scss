@@ -1,0 +1,82 @@
+@import '../../../App.scss';
+.email {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 50px 0px;
+    @include mobile{
+        
+    }
+
+    .imges {
+        height: 35%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+        padding: 0 20px;      
+        @include mobile{
+            flex-direction: column;
+            height: 70%;
+        }  
+
+        img {
+            width: 50%;
+            height: 100%;
+            @include mobile{
+                width: 100%;        
+            }
+        }
+    }
+
+    .emailcon {
+        height: 65%;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../../assets/fruitesbg.jpg") no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;        
+
+        h1{
+            color: white;
+            font-size: 40px;
+            font-weight: 700;
+            @include mobile{
+                font-size: 25px;            
+            }
+        }
+
+        span{
+            color: rgba(255, 255, 255, 0.712);
+        }
+        .sub{
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: space-between;            
+            background-color: white;            
+            border-radius: 25px;
+            overflow: hidden;
+            padding: 5px;
+            width: 500px;
+            @include mobile{
+                width: 400px;
+            }
+            
+            input{
+                padding: 10px 20px;                                                
+                width: 100%;
+            }
+                        
+        }
+        
+      }
+      
+      
+}
