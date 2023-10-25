@@ -1,13 +1,19 @@
+import { Link } from 'react-router-dom';
 import './MobileNav.scss';
 import { motion } from 'framer-motion';
+import { AiOutlineHeart } from 'react-icons/ai'
+import { BiShoppingBag } from 'react-icons/bi'
+import { GoSearch } from 'react-icons/go'
+import { useState } from 'react';
 
-const MobileNav = ({ isOpen }) => {
+const MobileNav = ({ isOpen, onclose }) => {
+
     const links = [
-        "Home",
-        "About",
-        "Blog",
-        "Shop",
-        "Contact"
+        "home",
+        "about",
+        "blog",
+        "products",
+        "contact"
     ]
 
     const variants = {
@@ -37,16 +43,31 @@ const MobileNav = ({ isOpen }) => {
             opacity: 0
         }
     }
-
+    
     return (
         <div className='mobnav'>
+
+            <div className="top">
+                <div className="search">
+                    <input type="text" placeholder='Search here' />
+                    <GoSearch />
+                </div>
+                <img src="https://images.pexels.com/photos/1468379/pexels-photo-1468379.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
+            </div>
+
             <div className="bg">
                 <motion.div className='links' variants={isOpen ? variants.open : variants.close}>
                     {links.map((link) => (
-                        <motion.a href={`#${link}`} key={link} variants={itemVariants}>{link}</motion.a>
+                        <motion.a href={`#${link}`} key={link} variants={itemVariants} onClick={()=>onclose(false)}>{link}</motion.a>
                     ))}
                 </motion.div>
             </div>
+
+            <div className="bottom">
+                <Link to="/fav"><div className='iconbox'><AiOutlineHeart size={30} /><span>0</span></div></Link>
+                <Link to="/cart"><div className='iconbox'><BiShoppingBag size={30} /><span>0</span></div></Link>
+            </div>
+
         </div>
     );
 };

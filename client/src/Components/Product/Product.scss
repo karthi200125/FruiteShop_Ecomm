@@ -1,0 +1,82 @@
+.card {
+    width: 250px;
+    height: 320px;
+    border-radius: 30px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.4);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+
+    .cardimg {
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        object-fit: contain;
+        top: -25%;
+        left: 0;
+    }
+
+    .top {
+        width: 100%;
+        flex: 1;
+        height: 100%;
+        position: relative;
+
+        .heartcon {
+            position: absolute;
+            top: 10%;
+            right: 5%;
+
+            &>:nth-child(1) {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .btm {
+        width: 100%;
+        flex: 1;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        padding: 10px;
+        position: relative;
+
+        .title {
+            font-size: 20px;
+        }
+
+        .desc {
+            font-size: 15px;
+            color: rgba(0, 0, 0, 0.4);
+        }
+
+        .price {
+            color: red;
+        }
+
+        .addtocart {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            gap: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            width: 80%;
+            background-color: white;
+            cursor: pointer;
+
+            &:hover {
+                box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.4);
+                transition: 0.5s;
+            }
+        }
+
+    }
+
+}

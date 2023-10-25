@@ -1,68 +1,58 @@
+import Carousel from '../../../Components/Carosoul/Carosl'
+import Product from '../../../Components/Product/Product'
+import c1 from '../../../assets/c1.png'
+import c6 from '../../../assets/c6.png'
+import f7 from '../../../assets/f7.png'
+import apple from '../../../assets/f9.png'
 import './FeaturedProducts.scss'
-import { HiShoppingCart } from 'react-icons/hi'
+import Btn from '../../../Components/Btn/Btn'
 
 const FeaturedProducts = () => {
 
+    const items = ['Card 1', 'Card 2', 'Card 3', 'Card 4', 'Card 5', 'Card 6', 'Card 7', 'Card 8', 'Card 9'];
+
     return (
         <div className='featured'>
-            <h1>Featured Products</h1>
-            <div className="categoryitemscon">
-                <div className="catitem">
-                    <img src="https://images.pexels.com/photos/2872767/pexels-photo-2872767.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
-                    <span>Al</span>
-                </div>
-                <div className="catitem">
-                    <img src="https://images.pexels.com/photos/2872767/pexels-photo-2872767.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
-                    <span>Al</span>
-                </div>
-                <div className="catitem">
-                    <img src="https://images.pexels.com/photos/2872767/pexels-photo-2872767.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
-                    <span>Al</span>
-                </div>
-                <div className="catitem">
-                    <img src="https://images.pexels.com/photos/2872767/pexels-photo-2872767.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
-                    <span>Al</span>
-                </div>
-                <div className="catitem">
-                    <img src="https://images.pexels.com/photos/2872767/pexels-photo-2872767.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
-                    <span>Al</span>
-                </div>
+            <div className="freshfruites">
+                <h1 className='freahfruitetitle'><b>Our Fresh</b> & Healthy Fruites</h1>
+                <Carousel items={items} />
             </div>
-            <div className="products">
-                <div className="product">
-                    <img src="https://images.pexels.com/photos/2872767/pexels-photo-2872767.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
-                    <div className="bottom">
-                        <h1>Product Title</h1>
-                        <h2>Price</h2>
-                        <div className="cartbtn">
-                            <HiShoppingCart size={20} />
-                            <button>Add to Cart</button>
-                        </div>
+            <>
+                <h1 className='featuredprrotitle'><b>Featured</b> Products</h1>
+                <div className="categoryitemscon">
+                    <div className="catitem">
+                        <img src={apple} alt="" />
+                        <span>All</span>
+                    </div>
+                    <div className="catitem">
+                        <img src={c1} alt="" />
+                        <span>Curry</span>
+                    </div>
+                    <div className="catitem">
+                        <img src={f7} alt="" />
+                        <span>Veg</span>
+                    </div>
+                    <div className="catitem">
+                        <img src={c6} alt="" />
+                        <span>Fruites</span>
+                    </div>
+                    <div className="catitem">
+                        <img src={apple} alt="" />
+                        <span>Fish</span>
                     </div>
                 </div>
-                <div className="product">
-                    <img src="https://images.pexels.com/photos/2872767/pexels-photo-2872767.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
-                    <div className="bottom">
-                        <h1>Product Title</h1>
-                        <h2>Price</h2>
-                        <div className="cartbtn">
-                            <HiShoppingCart size={20} />
-                            <button>Add to Cart</button>
-                        </div>
-                    </div>
+                <div className="products">
+                    <Product />
+                    <Product />
+                    <Product />
+                    <Product />
+                    <Product />
+                    <Product />
+                    <Product />
+                    <Product />
                 </div>
-                <div className="product">
-                    <img src="https://images.pexels.com/photos/2872767/pexels-photo-2872767.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
-                    <div className="bottom">
-                        <h1>Product Title</h1>
-                        <h2>Price</h2>
-                        <div className="cartbtn">
-                            <HiShoppingCart size={20} />
-                            <button>Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <Btn title={"Show All"}/>
+            </>
         </div>
     )
 }

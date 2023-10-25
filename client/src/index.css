@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Avant Garde Book BT';
+    font-style: normal;
+    font-weight: normal;
+    src: url("../public/AVGARDD_2.TTF") format("truetype");
+}
+
+body {
+    font-family: 'Avant Garde Book BT';
+}

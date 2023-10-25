@@ -8,12 +8,13 @@ import FeaturedProducts from "./FeaturedProducts/FeaturedProducts"
 import Main from "./Main/Main"
 
 const Home = () => {
+    
     return (
         <div className='home'>
             <section id="home"><Main/></section>
             <section id="about"><About/></section>
-            <section id="blog"><Blog/></section>
             <section id="products"><FeaturedProducts/></section>
+            <section id="blog"><Blog/></section>
             <section id="email"><Email/></section>
             <section id="contact"><Contact/></section>
         </div>
