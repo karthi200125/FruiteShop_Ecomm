@@ -3,9 +3,9 @@ import './Carosoul.scss'
 import { TbBasketFilled } from 'react-icons/tb'
 import apple from '../../assets/f7.png'
 
-const Carousel = ({ items }) => {
+const Carousel = ({ allProducts }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const cardsToShow = 5;
+    const cardsToShow = 1;
 
     const nextSlide = () => {
         if (currentIndex < items.length - cardsToShow) {
@@ -19,6 +19,8 @@ const Carousel = ({ items }) => {
         }
     };
 
+    const onlyfruits = allProducts?.allproducts?.filter((item) => item.category === "fruits")    
+
     return (
         <div className="carousel-container">
             <div className="bottons">
@@ -27,20 +29,19 @@ const Carousel = ({ items }) => {
             </div>
             <div className="carousel">
                 <div className="cards" style={{ transform: `translateX(-${currentIndex * (100 / cardsToShow)}%)` }}>
-                    {items.map((item, index) => (
-                        <div className="card" key={index}>
-                            
-                            <img src={apple} alt="" />
+                    {onlyfruits?.map((item, index) => (
+                        <div className="carosolcard" key={index}>
+                            <img src={item.productImg} alt="" />
                             <div className="carddetails">
                                 <div className="top">
-                                    <div className="buckethover">
+                                    {/* <div className="buckethover">
                                         <TbBasketFilled />
-                                    </div>
+                                    </div> */}
                                 </div>
                                 <div className="btm">
-                                    <h1>Blueberry</h1>
-                                    <p>fdecription</p>
-                                    <span>12</span>
+                                    <h1>{item.title}</h1>
+                                    <p>{item.desc}</p>
+                                    <span>₹ {item.price}</span>
                                 </div>
                             </div>
                         </div>

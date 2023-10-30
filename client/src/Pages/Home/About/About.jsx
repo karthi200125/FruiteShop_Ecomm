@@ -1,23 +1,23 @@
 import Btn from '../../../Components/Btn/Btn'
 import './About.scss'
-import apple from '../../../assets/apple.png'
+import c1 from '../../../assets/c1.png'
 import singleleaf from '../../../assets/singleleaf.png'
-import glass from '../../../assets/glass.png'
+import f9 from '../../../assets/f9.png'
 
 const About = () => {
 
     const aboutitems = [
         {
-            title: "Oraganic",
-            img: singleleaf
-        },
-        {
             title: "Natural",
-            img: apple
+            img: f9
         },
         {
-            title: "Healthy",
-            img: glass
+            title: "Spicy",
+            img: c1
+        },
+        {
+            title: "Organic",
+            img: singleleaf
         },
     ]
 

@@ -1,11 +1,13 @@
 import './Blog.scss'
 import { LiaArrowLeftSolid, LiaArrowRightSolid } from 'react-icons/lia';
-import chocolate from '../../../assets/chocolate.jpg'
-import avocado from '../../../assets/avocado.jpg'
-import watremelon from '../../../assets/watermelon.jpg'
+import chicken from '../../../assets/c1.png'
+import avocado from '../../../assets/f7.png'
+import watremelon from '../../../assets/fruits.png'
+import groceries from '../../../assets/groceries.png'
 import apple from '../../../assets/apple.png'
-import lemon from '../../../assets/lemon.jpg'
-import fruits from '../../../assets/fruits.jpg'
+import c6 from '../../../assets/c6.png'
+import rating from '../../../assets/rating.png'
+
 
 
 const Blog = () => {
@@ -13,22 +15,22 @@ const Blog = () => {
     const blogitems = [
         {
             maintitle: "top Products",
-            mainimg: chocolate,
-            img: avocado,
+            mainimg: chicken,
+            img: c6,
             price: "100",
             title: "Oraganic Chabery and Apple",
         },
         {
             maintitle: "Best Products",
-            mainimg: watremelon,
-            img: apple,
+            mainimg: groceries,
+            img: avocado,
             price: "200",
             title: "Oraganic Chabery and Apple",
         },
         {
             maintitle: "Recent Products",
-            mainimg: fruits,
-            img: lemon,
+            mainimg: watremelon,
+            img: apple,
             price: "150",
             title: "Oraganic Chabery and Apple",
         },
@@ -38,19 +40,23 @@ const Blog = () => {
         <div className='blog'>
             {blogitems.map((item) => (
                 <div className="itemcon" key={item.price}>
-                    <img src={item.mainimg} alt="" />
-                    <div className="item">
-                        <h1>{item.maintitle}</h1>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, cumque aut incidunt officia fugiat delectus.</span>
-                        <div className="imgcon">
-                            <LiaArrowLeftSolid />
-                            <img src={item.img} alt="" />
-                            <LiaArrowRightSolid />
-                        </div>
-                        <div className="bottom">
-                            <div className="rating">12345</div>
-                            <h2>{item.title}</h2>
-                            <div className="price">{item.price}</div>
+                    <div className="mainimgcon">
+                        <img src={item.mainimg} alt="" />
+                    </div>
+                    <div className="itemcon">
+                        <div className="item">
+                            <h1>{item.maintitle}</h1>
+                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, cumque aut incidunt officia fugiat delectus.</span>
+                            <div className="imgcon">
+                                <LiaArrowLeftSolid size={20}/>
+                                <img src={item.img} alt="" />
+                                <LiaArrowRightSolid size={20}/>
+                            </div>
+                            <div className="bottom">
+                                <img src={rating} alt="" className='rating'/>
+                                <h2>{item.title}</h2>
+                                <div className="price">{item.price}</div>
+                            </div>
                         </div>
                     </div>
                 </div>

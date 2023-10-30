@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin: 50px 0px;
+    margin: 50px 0px 0px 0px;
     @include mobile{
         
     }
@@ -21,6 +21,7 @@
         @include mobile{
             flex-direction: column;
             height: 70%;
+            padding: 0 10px;      
         }  
 
         img {
@@ -42,6 +43,10 @@
         justify-content: center;
         flex-direction: column;
         gap: 10px;        
+        @include mobile {
+            width: 100%;                  
+            text-align: center;           
+        }
 
         h1{
             color: white;
@@ -66,7 +71,7 @@
             padding: 5px;
             width: 500px;
             @include mobile{
-                width: 400px;
+                width: 300px;
             }
             
             input{

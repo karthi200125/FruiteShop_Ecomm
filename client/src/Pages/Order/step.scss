@@ -1,0 +1,95 @@
+@import '../../App.scss';
+
+.stepscon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-top: 100px;
+
+  @include mobile {
+    position: absolute;
+    z-index: 1;
+  }
+
+  .steps {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+    padding-right: 5%;
+    @include mobile{
+      width: 100%;
+    }
+
+
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      justify-content: center;
+      gap: 10px;
+      position: relative;
+      width: 100%;
+
+      p {
+        margin-right: -5%;
+      }
+
+      &:not(:first-child)::before {
+        content: '';
+        background-color: black;
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        right: 50%;
+        top: 25%;
+        transform: translateX(50%);
+      }
+
+      .stepdiv {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        position: relative;
+        background: gray;
+        border-radius: 50%;
+        color: white;
+
+        &.completed {
+          background-color: green;
+
+          &::after {
+            content: '✔';
+            color: white;
+          }
+        }
+      }
+
+      &.active .stepdiv {
+        background-color: rgba(108, 108, 241, 0.979);
+      }
+
+      &.complete .stepdiv {
+        background-color: #90EE90;
+      }
+    }
+  }
+
+  .stepbtns {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+}

@@ -1,3 +1,149 @@
-.contact{
+@import '../../../App.scss';
+
+.contact {
     width: 100%;
+    height: max-content;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: black;
+
+    @include mobile {
+        padding: 10px 10px;
+    }
+
+    .top {
+        height: 100px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+        @include mobile {
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            gap: 10px;
+            color: white;
+
+            img {
+                width: 70px;
+                height: 70px;
+                object-fit: cover;
+                border-radius: 50%;
+                mix-blend-mode: difference;
+
+                @include mobile {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+
+            .left {
+                cursor: pointer;
+                font-size: 35px;
+                font-weight: bold;
+
+                @include mobile {
+                    font-size: 25px;
+                }
+
+                span {
+                    color: red;
+                }
+            }
+        }
+
+        .icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            gap: 20px;
+            color: white;
+
+            @include mobile {
+                gap: 10px;
+                font-size: 10px;
+            }
+
+            .contacticon {
+                cursor: pointer;
+
+                &:hover {
+                    color: red;
+                    transition: 0.3s;
+                }
+            }
+
+        }
+    }
+
+    .mid {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        flex-flow: row wrap;
+        gap: 20px;
+
+        @include mobile {
+            gap: 10px;
+        }
+
+        .box {
+            width: 250px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: start;
+            padding: 10px;
+
+            @include mobile {
+                width: 140px;                
+                height: 260px;
+            }
+
+            h1 {
+                width: 100%;
+                color: white;
+            }
+
+            p {
+                color: rgba(255, 255, 255, 0.4);
+                cursor: pointer;
+
+                &:hover {
+                    color: white;
+                    transition: 0.3s;
+                }
+            }
+
+        }
+
+    }
+
+    .btm {
+        height: 80px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.4);
+        justify-content: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+        @include mobile {
+            text-align: center;
+        }
+    }
 }

@@ -1,60 +1,34 @@
-import Carousel from '../../../Components/Carosoul/Carosl'
-import Product from '../../../Components/Product/Product'
-import c1 from '../../../assets/c1.png'
-import c6 from '../../../assets/c6.png'
-import f7 from '../../../assets/f7.png'
-import apple from '../../../assets/f9.png'
-import './FeaturedProducts.scss'
-import Btn from '../../../Components/Btn/Btn'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Btn from '../../../Components/Btn/Btn';
+import Carousel from '../../../Components/Carosoul/Carosl';
+import Product from '../../../Components/Product/Product';
+import useGetData from '../../../Utils/fetch';
+import './FeaturedProducts.scss';
 
 const FeaturedProducts = () => {
 
-    const items = ['Card 1', 'Card 2', 'Card 3', 'Card 4', 'Card 5', 'Card 6', 'Card 7', 'Card 8', 'Card 9'];
+    const data = useGetData("/product/getallProducts")
+    
+    const withoufruites = data?.data?.allproducts?.filter((item) => item.category !== "fruits")
 
     return (
         <div className='featured'>
-            <div className="freshfruites">
-                <h1 className='freahfruitetitle'><b>Our Fresh</b> & Healthy Fruites</h1>
-                <Carousel items={items} />
+            <div className="fruitecon">
+                <h1 className='fruitstitle'><b>Our Fresh</b> & Healthy Fruits</h1>
+                <Carousel key={data?.data} allProducts={data?.data} />
             </div>
             <>
-                <h1 className='featuredprrotitle'><b>Featured</b> Products</h1>
-                <div className="categoryitemscon">
-                    <div className="catitem">
-                        <img src={apple} alt="" />
-                        <span>All</span>
-                    </div>
-                    <div className="catitem">
-                        <img src={c1} alt="" />
-                        <span>Curry</span>
-                    </div>
-                    <div className="catitem">
-                        <img src={f7} alt="" />
-                        <span>Veg</span>
-                    </div>
-                    <div className="catitem">
-                        <img src={c6} alt="" />
-                        <span>Fruites</span>
-                    </div>
-                    <div className="catitem">
-                        <img src={apple} alt="" />
-                        <span>Fish</span>
-                    </div>
-                </div>
+                <h1 className='featuredproductstitle'><b>Featured</b> Products</h1>
                 <div className="products">
-                    <Product />
-                    <Product />
-                    <Product />
-                    <Product />
-                    <Product />
-                    <Product />
-                    <Product />
-                    <Product />
+                    {withoufruites?.slice(0, 8).map((data) => (
+                        <Product key={data._id} data={data} />
+                    ))}
                 </div>
-                <Btn title={"Show All"}/>
+                <Link to="/shop"><Btn title={"Show All"} /></Link>
             </>
         </div>
-    )
-}
+    );
+};
 
-export default FeaturedProducts
+export default FeaturedProducts;

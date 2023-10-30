@@ -1,0 +1,151 @@
+@import '../../App.scss';
+
+.fav {
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px 40px 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    @include mobile{
+        padding: 100px 10px 0px 10px;        
+    }
+
+    .fp-products {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        flex-flow: row wrap;
+        @include mobile{
+            flex-direction: column;
+        }
+
+        .yourcart {
+            font-size: 40px;
+            text-align: center;
+            border-bottom: 4px solid black;
+        }
+
+        .cp-product {
+            width: 45%;
+            height: 200px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            position: relative;
+            padding: 10px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            @include mobile{
+                width: 100%;
+            }
+
+            .cp-close {
+                position: absolute;
+                right: 2%;
+                cursor: pointer;
+                top: 5%;
+
+                &:hover{
+                    color: red;
+                }
+            }
+
+            img {
+                width: 30%;
+                height: 100%;
+            }
+
+            .detailcon {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                justify-content: space-between;
+
+                .cp-title {
+                    font-size: 30px;
+                    text-transform: capitalize;
+                    @include mobile{
+                        font-size: 20px;                        
+                    }
+                }
+
+                .cp-price {
+                    color: red;
+                    font-size: 20px;
+                }
+
+                .cp-desc {
+                    color: rgba(0, 0, 0, 0.4);
+                    font-size: 15px;
+                }
+
+                .btm{
+                    display: flex;
+                    align-items: center;
+                    justify-content: start;
+                    width: 100%;
+                    gap: 10px;
+
+                    .cpbtns {
+                        width: 150px;
+                        display: flex;
+                        align-items: center;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        padding: 5px;
+                        border: 1px solid rgba(0, 0, 0, 0.2);
+                        border-radius: 5px;
+    
+                        button {
+                            padding: 10px;
+                        }
+                    }
+
+                    .addtocart {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: row;
+                        gap: 10px;
+                        padding: 10px;
+                        border-radius: 10px;
+                        width: 200px;
+                        background-color: white;
+                        cursor: pointer;
+                        border: 1px solid rgba(0, 0, 0, 0.192);
+                        @include mobile{
+                            width: 150px;
+                        }
+        
+                        &:hover {
+                            box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.4);
+                            transition: 0.5s;
+                        }
+                    }
+                }
+                
+            }
+            
+        }
+
+        .empty{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 80vh; 
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+}

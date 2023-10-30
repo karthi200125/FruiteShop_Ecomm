@@ -9,75 +9,37 @@
     background-color: #d6dce381;
 
     // FRESH FRUITES
-    .freshfruites {
+    .fruitecon {
         width: 100%;
         height: max-content;
         padding: 40px;
+        @include mobile{
+            padding: 10px;
+        }
 
 
-        .freahfruitetitle {
+        .fruitstitle {
             width: 80%;
             padding-left: 40px;
             line-height: 50px;
+            @include mobile{
+                width: 100%;
+                padding-left: 10px;
+                font-size: 23px;
+            }
 
             b {
-                border-bottom: 4px solid red;
+                border-bottom: 4px solid red !important;
             }
         }
 
         .carosol {
-            width: 100%;
-            display: flex;
-
+            width: max-content;            
         }
     }
 
 
-    // CETGORIES
-
-    .categoryitemscon {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-        width: max-content;
-        height: 150px;
-        margin-top: 20px;
-
-        @include mobile {
-            flex-flow: row wrap;
-            width: 350px;
-        }
-
-        .catitem {
-            background-color: white;
-            height: 100%;
-            width: 100px;
-            border-radius: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            gap: 30px;
-            box-shadow: 8px 10px 20px rgba(0, 0, 0, 0.453);
-            cursor: pointer;
-
-            &:hover {
-                background-color: red;
-                transition: 0.4s;
-            }
-
-            img {
-                width: 70px;
-                height: 70px;
-                object-fit: contain;
-                border-radius: 50%;
-            }
-        }
-    }
-
-    .featuredprrotitle {
+    .featuredproductstitle {
         width: 90%;
         text-align: start;
 
@@ -94,12 +56,14 @@
         width: 100%;
         padding: 20px 50px;
         margin-top: 50px;
-        gap: 60px 0;
+        gap: 60px 0;        
 
         @include mobile {
             margin-top: 150px;
             display: flex;
             flex-flow: row wrap;
+            padding: 10px 10px;        
+            margin-top: 50px;
         }
 
     }

@@ -5,27 +5,51 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 30px;
+    padding: 10px 30px;
     position: fixed;
+    background-color: white;
     top: 0;
-    left: 0;        
+    left: 0;
     z-index: 2;
 
-    @include mobile{
+    @include mobile {
         background-color: white;
         z-index: 10;
+        padding: 15px;
     }
 
-    .left {
-        cursor: pointer;
-        font-size: 35px;        
-        font-weight: bold;
-        span {
-            color: red;
+    .leftcon {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 5px;
+
+        @include mobile {}
+
+        img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            border-radius: 50%;
+            // rotate: 90deg;
+
+            @include mobile {
+                display: none;
+            }
         }
 
-        @include mobile {
-            font-size: 30px;
+        .left {
+            cursor: pointer;
+            font-size: 35px;
+            font-weight: bold;
+
+            span {
+                color: red;
+            }
+
+            @include mobile {
+                font-size: 30px;
+            }
         }
     }
 
@@ -33,7 +57,8 @@
         display: flex;
         align-items: center;
         flex-direction: row;
-        gap: 30px;
+        justify-content: center;
+        gap: 30px;        
 
         li {
             cursor: pointer;
@@ -42,6 +67,8 @@
             font-size: 12px;
             @include linehover;
         }
+
+        
 
         @include mobile {
             display: none;
@@ -58,19 +85,53 @@
             display: none;
         }
 
-        .search {
-            display: flex;
-            align-items: center;
-            padding: 0 10px;
-            overflow: hidden;
-            gap: 10px;
-            border-radius: 25px;
-            background-color: white;            
 
-            input {
-                padding: 10px;                
+        .dashboard {
+            background-color: #d6dce381;
+            color: black;
+            font-size: 15px;
+            border-radius: 25px;
+            padding: 12px;
+            position: relative;
+
+            button {
+                background-color: transparent;
+
+                &:hover+span {
+                    display: block;
+                }
             }
-            &>:nth-child(2){cursor: pointer;}
+
+            span {
+                display: none;
+                position: absolute;
+                font-size: 12px;
+                width: max-content;
+                left: 50%;
+                bottom: -100%;
+                right: 50%;
+                transform: translate(-50%, -50%);
+                background-color: black;
+                border-radius: 5px;
+                padding: 5px;
+                color: white;
+                cursor: default;
+
+                p {
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    background-color: black;
+                    top: 50%;
+                    left: 50%;
+                    right: 50%;
+                    transform: translate(-50%, -50%);
+                    rotate: 45deg;
+                    z-index: -1;
+                    border-radius: 3px;
+                }
+            }
+
         }
 
         .account {
@@ -78,16 +139,61 @@
             align-items: center;
             gap: 5px;
             cursor: pointer;
+            position: relative;
+
+            .ddopen {
+                position: absolute;
+                width: 150px;
+                padding: 10px;
+                display: flex;
+                align-items: start;
+                flex-direction: column;
+                gap: 10px;
+                border-radius: 15px;
+                right: 0;
+                border: 1px solid rgba(0, 0, 0, 0.4);
+                box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+                background-color: white;
+                transition: 0.5s ease-in-out;
+                top: 130%;
+                overflow: hidden;
+
+                button {
+                    width: 100%;
+                    padding: 10px;
+                    display: flex;
+                    align-items: center;
+                    flex-direction: row;
+                    justify-content: start;
+                    border-radius: 10px;
+                    font-size: 15px;
+                    gap: 10px;
+                }
+
+                h1 {
+                    font-size: 15px;
+                    width: 100%;
+                    overflow-x: hidden;
+                }
+            }
+
+            img {
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+                object-fit: cover;
+            }
+
         }
 
         .icons {
             display: flex;
             align-items: center;
             gap: 15px;
-            
+
             &>:nth-child(1),
-            &>:nth-child(2){
-                cursor: pointer;                
+            &>:nth-child(2) {
+                cursor: pointer;
             }
 
             span {
@@ -99,8 +205,38 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                border-radius: 50%;                
+                border-radius: 50%;
+                background-color: red;
+                color: white;
+                font-size: 10px;
             }
+        }
+    }
+
+
+    .signcon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        flex-direction: row;
+        @include mobile{
+            padding-right: 15%;
+        }
+
+        button{
+            padding: 10px;            
+            background-color: transparent;
+            color: white !important;
+        }
+
+        &>:nth-child(1){
+            background-color: rgba(0, 0, 0, 0.4) !important;
+            border-radius: 25px;            
+        }
+        &>:nth-child(2){
+            background-color: rgba(255, 0, 0, 0.8) !important;
+            border-radius: 25px;            
         }
     }
 
@@ -117,7 +253,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        background-color: black;
+        background-color: red;
         color: white;
     }
 
@@ -125,6 +261,7 @@
         display: none;
 
         @include mobile {
+            overflow-x: hidden;
             position: absolute;
             right: 5%;
             top: 10%;
@@ -137,5 +274,18 @@
             align-items: center;
             justify-content: center;
         }
+    }
+
+    .profilecon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.342);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
     }
 }
