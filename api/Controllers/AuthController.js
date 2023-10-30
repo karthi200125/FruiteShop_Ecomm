@@ -28,7 +28,6 @@ export const Login = async (req, res, next) => {
 
         const token = jwt.sign({ userId: user._id, isAdmin: user.isAdmin }, process.env.JWT_SECRET_KEY, { expiresIn: "1d" });
         res.cookie("access_token", token, { httpOnly: true }).status(200).json(others);
-        console.log("token" , token)
     } catch (error) {
         console.error(error);
         res.status(500).json("Login failed");

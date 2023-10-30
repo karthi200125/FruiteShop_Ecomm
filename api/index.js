@@ -10,9 +10,15 @@ import ProductRouter from './Routes/ProductRoute.js';
 dotenv.config();
 
 const app = express();
-app.use(express.json());
-app.use(cors());
 app.use(cookieParser());
+app.use(express.json());
+const allowedOrigins = ['http://localhost:5173'];
+const corsOptions = {
+  origin: allowedOrigins,
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 
 
 // Routers

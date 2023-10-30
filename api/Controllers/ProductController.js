@@ -40,7 +40,7 @@ export const getcategoryProducts = async (req, res, next) => {
     }
 };
 
-export const getallProducts = async (req, res, next) => {
+export const getallProducts = async (req, res, next) => {    
     try {
         const allproducts = await Product.find();
         res.status(200).json({ message: "Successfully retrieved all products", allproducts });
