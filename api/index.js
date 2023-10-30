@@ -12,13 +12,10 @@ dotenv.config();
 const app = express();
 app.use(cookieParser());
 app.use(express.json());
-const allowedOrigins = ['http://localhost:5173'];
-const corsOptions = {
-  origin: allowedOrigins,
+app.use(cors({
+  origin: '*',
   credentials: true,
-};
-
-app.use(cors(corsOptions));
+}));
 
 
 // Routers

@@ -4,13 +4,14 @@ import { DeleteProduct, createProduct, getallProducts, getcategoryProducts, sing
 
 
 const router = express.Router();
+router.get("/getallProducts", getallProducts)
 router.use(VerifyToken)
-router.post("/createproduct/:userId",VerifyUser, VerifyAdmin, createProduct)
+router.post("/createproduct/:userId", VerifyUser, VerifyAdmin, createProduct)
 router.put("/updateproduct/:postId", VerifyUser, VerifyAdmin, updateProduct)
 router.delete("/deleteproduct/:postId", VerifyUser, VerifyAdmin, DeleteProduct)
 router.get("/getcategoryproducts", getcategoryProducts)
 router.get("/singleproduct/:postId", VerifyUser, singleProduct)
-router.get("/getallProducts", getallProducts)
+
 
 
 // router.post("/createproduct/:userId", createProduct)
