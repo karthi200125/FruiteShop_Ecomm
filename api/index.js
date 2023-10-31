@@ -14,17 +14,27 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(
   cors({
-    origin: 'http://localhost:5173/',
+    origin: 'http://localhost:5173',
     credentials: true,
   })
 );
-
-app.set('trust proxy', 1);
 
 // Routers
 app.use('/auth', AuthRouter);
 app.use('/user', UserRouter);
 app.use('/product', ProductRouter);
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+  res.header('Access-Control-Allow-Credentials', 'true');
+  if (req.method === 'OPTIONS') {
+    res.sendStatus(200);
+  } else {
+    next();
+  }
+});
 
 // MONGO DB CONNECTION
 mongoose
@@ -42,13 +52,12 @@ app.use((err, req, res, next) => {
   const errorStack = err.stack || "Internal Server Error";
 
   res.status(status).json({
-    success:false,
+    success: false,
     status,
     error: errorMessage,
     stack: errorStack
   });
 });
-
 
 app.listen(8800, () => {
   console.log('API is working on port 8800');
