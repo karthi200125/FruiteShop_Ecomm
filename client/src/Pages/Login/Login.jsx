@@ -31,8 +31,8 @@ const Login = () => {
       const res = await apirequest.post('/auth/login', input);
       dispatch(login(res.data));
       console.log("login",res.data)
-      if (res?.data?.cartProducts?.length > 0) {
-        res?.data?.cartProducts?.forEach((item) => {
+      if (res.data?.cartProducts?.length > 0) {
+        res.data.cartProducts.forEach((item) => {
           dispatch(addToCart(item));
         });
       }

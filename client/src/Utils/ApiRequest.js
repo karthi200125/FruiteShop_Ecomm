@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const apirequest = axios.create({
-  baseURL: "https://ecomapi-vau1.onrender.com/",
+  baseURL: "https://fruitsapi.onrender.com/",
   withCredentials: true,  
 });
 
