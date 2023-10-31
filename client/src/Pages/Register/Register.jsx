@@ -25,7 +25,7 @@ const Register = () => {
     if (isloading) return;
     setisloading(true)
     try {
-      await apirequest.post('http://localhost:8800/auth/register', input);
+      await apirequest.post('/auth/register', input);
       navigate('/login');
       setisloading(false)
       console.log("register sucess")

@@ -60,7 +60,7 @@ const Navbar = () => {
         }
     }
 
-
+console.log("from navber",user?.data)
 
     return (
         <div className='navbar' style={{ boxShadow: scrolly === 0 ? "" : "2px 4px 10px rgba(0, 0, 0, 0.2)" }}>

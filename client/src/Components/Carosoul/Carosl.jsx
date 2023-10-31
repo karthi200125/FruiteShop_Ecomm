@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import './Carosoul.scss'
-import { TbBasketFilled } from 'react-icons/tb'
-import apple from '../../assets/f7.png'
+import './Carosoul.scss';
 
 const Carousel = ({ allProducts }) => {
     const [currentIndex, setCurrentIndex] = useState(0);

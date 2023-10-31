@@ -17,7 +17,7 @@ const Cart = () => {
 
   const handleremovecart = async (id) => {
     try {
-      const res = await apirequest.post(`http://localhost:8800/user/removeUserCartProducts/${user._id}`, { productId: id });
+      const res = await apirequest.post(`/user/removeUserCartProducts/${user._id}`, { productId: id });
       console.log(res.data);
       dispatch(removeFromCart(id));
     } catch (error) {

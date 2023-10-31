@@ -88,7 +88,7 @@ const Profile = ({ onclose }) => {
             const uploadedImageUrl = await handleUpload();
             const userId = user._id;
             const response = await apirequest.put(
-                `http://localhost:8800/user/updateuser/${userId}`,
+                `/user/updateuser/${userId}`,
                 { ...input, profilePic: uploadedImageUrl || user.profilePic }
             );
             dispatch(login(response.data));

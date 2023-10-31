@@ -19,7 +19,7 @@ const Fav = () => {
 
       if (!isProductInCart) {
         const res = await apirequest.post(
-          `http://localhost:8800/user/addUserCartProducts/${user._id}`,
+          `/user/addUserCartProducts/${user._id}`,
           data
         );
         console.log(res.data);

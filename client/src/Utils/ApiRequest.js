@@ -1,9 +1,8 @@
 import axios from 'axios';
 
 export const apirequest = axios.create({
-  baseURL: "http://localhost:8800/",
-  withCredentials: true,
+  baseURL: "https://ecomapi-vau1.onrender.com/",
+  withCredentials: true,  
 });
-
 
 export default apirequest;

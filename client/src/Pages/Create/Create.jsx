@@ -76,7 +76,7 @@ const Create = () => {
     try {
       const uploadedImageUrl = await handleUpload();
       const userId = user?._id;
-      const res = await apirequest.post(`http://localhost:8800/product/createproduct/${userId}`, {
+      const res = await apirequest.post(`/product/createproduct/${userId}`, {
         ...input,
         productImg: uploadedImageUrl,
       });
