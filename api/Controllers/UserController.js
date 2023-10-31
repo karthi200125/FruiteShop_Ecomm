@@ -1,4 +1,5 @@
-import User from '../Models/UserModel.js'
+import User from '../Models/UserModel.js';
+import { createError } from '../Utils/errMidelware.js';
 
 export const UpdateUser = async (req, res, next) => {
     const { userId } = req.params;
@@ -10,7 +11,7 @@ export const UpdateUser = async (req, res, next) => {
         const { password, ...others } = user._doc;
         res.status(200).json(others);
     } catch (error) {
-        res.status(500).json({ message: "User Update Failed", error: error.message });
+        next(error); 
     }
 };
 
@@ -22,7 +23,7 @@ export const addUserCartProducts = async (req, res, next) => {
         await user.save();
         res.status(200).json(`Cart product successfully added to ${user.username}`);
     } catch (error) {
-        res.status(500).json({ message: "Cart product upload failed", error: error.message });
+        next(error); 
     }
 };
 
@@ -37,10 +38,10 @@ export const removeUserCartProducts = async (req, res, next) => {
             await user.save();
             res.status(200).json(`Product successfully removed from ${user.username}'s cart`);
         } else {
-            res.status(404).json(`Product with ID ${productId} not found in ${user.username}'s cart`);
+            next(createError(401,`Product with ID ${productId} not found in ${user.username}'s cart`))
         }
     } catch (error) {
-        res.status(500).json({ message: "Product removal failed", error: error.message });
+        next(error); 
     }
 };
 
@@ -50,9 +51,9 @@ export const addUserFavProducts = async (req, res, next) => {
         const user = await User.findById(userId);
         user.favProducts.push(req.body);
         await user.save();
-        res.status(200).json(`wishlist product successfully added to ${user.username}`);
+        res.status(200).json(`Wishlist product successfully added to ${user.username}`);
     } catch (error) {
-        res.status(500).json({ message: "wishlist product upload failed", error: error.message });
+        next(error); 
     }
 };
 
@@ -65,21 +66,11 @@ export const removeUserFavProducts = async (req, res, next) => {
         if (productIndex !== -1) {
             user.favProducts.splice(productIndex, 1);
             await user.save();
-            res.status(200).json(`Product successfully removed from ${user.username}'s cart`);
+            res.status(200).json(`Product successfully removed from ${user.username}'s wishlist`);
         } else {
-            res.status(404).json(`Product with ID ${productId} not found in ${user.username}'s wishlist`);
+            next(createError(404,`Product with ID ${productId} not found in ${user.username}'s wishlist`))
         }
     } catch (error) {
-        res.status(500).json({ message: "Product removal failed", error: error.message });
+        next(error); 
     }
 };
-
-
-
-
-
-
-
-
-
-
