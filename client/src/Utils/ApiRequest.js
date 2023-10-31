@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 export const apirequest = axios.create({
-  baseURL: "https://fruitsapi.onrender.com/",
-  withCredentials: true,  
+  baseURL: "https://fruitsapi.onrender.com/"  
 });
 
 export default apirequest;
