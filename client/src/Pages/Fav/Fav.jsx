@@ -34,7 +34,7 @@ const Fav = () => {
   const handleremovefav = async (id) => {
     try {
       const res = await apirequest.post(
-        `http://localhost:8800/user/removeUserfavProducts/${user._id}`,
+        `/user/removeUserfavProducts/${user._id}`,
         { productId: id }
       );
       console.log(res.data);
