@@ -35,7 +35,7 @@
         @include mobile {
             flex-direction: column;
             padding: 10px;            
-            height: 210vh;
+            height: 150vh;            
         }
 
         .left {
@@ -111,6 +111,7 @@
             @include mobile{
                 padding: 5px;
                 margin-top: 20px;
+                height: max-content;
             }
 
             img {
