@@ -5,8 +5,10 @@ const Carousel = ({ allProducts }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const cardsToShow = 1;
 
+    const cardWidth = 300; 
+
     const nextSlide = () => {
-        if (currentIndex < items.length - cardsToShow) {
+        if (currentIndex < onlyfruits.length - cardsToShow) {
             setCurrentIndex(currentIndex + 1);
         }
     };
@@ -17,7 +19,9 @@ const Carousel = ({ allProducts }) => {
         }
     };
 
-    const onlyfruits = allProducts?.allproducts?.filter((item) => item.category === "fruits")    
+    const onlyfruits = allProducts?.allproducts?.filter((item) => item.category === "fruits");
+
+    const translateX = -currentIndex * cardWidth;
 
     return (
         <div className="carousel-container">
@@ -26,16 +30,11 @@ const Carousel = ({ allProducts }) => {
                 <button className="next" onClick={nextSlide}>&#8250;</button>
             </div>
             <div className="carousel">
-                <div className="cards" style={{ transform: `translateX(-${currentIndex * (100 / cardsToShow)}%)` }}>
+                <div className="cards" style={{ transform: `translateX(${translateX}px)` }}>
                     {onlyfruits?.map((item, index) => (
                         <div className="carosolcard" key={index}>
                             <img src={item.productImg} alt="" />
-                            <div className="carddetails">
-                                <div className="top">
-                                    {/* <div className="buckethover">
-                                        <TbBasketFilled />
-                                    </div> */}
-                                </div>
+                            <div className="carddetails">                                
                                 <div className="btm">
                                     <h1>{item.title}</h1>
                                     <p>{item.desc}</p>
@@ -46,7 +45,6 @@ const Carousel = ({ allProducts }) => {
                     ))}
                 </div>
             </div>
-
         </div>
     );
 };

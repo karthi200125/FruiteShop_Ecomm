@@ -18,7 +18,7 @@ const Product = ({ data }) => {
     const addtocart = async () => {
         try {
             if (!isProductInCart) {
-                const res = await apirequest.post(`/user/addUserCartProducts/${user._id}`, data);
+                const res = await apirequest.post(`http://localhost:8800/user/addUserCartProducts/${user._id}`, data);
                 console.log(res.data);
                 dispatch(addToCart(data));
                 console.log("add to cart", data)
@@ -31,7 +31,7 @@ const Product = ({ data }) => {
     const addtofav = async () => {
         try {
             if (!isProductInFav) {
-                const res = await apirequest.post(`/user/addUserfavProducts/${user._id}`, data);
+                const res = await apirequest.post(`http://localhost:8800/user/addUserfavProducts/${user._id}`, data);
                 console.log(res.data);
                 dispatch(addToFav(data));
                 console.log("add to wishlist", data)
