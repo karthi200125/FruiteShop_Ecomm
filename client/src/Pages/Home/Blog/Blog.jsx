@@ -1,12 +1,12 @@
-import './Blog.scss'
 import { LiaArrowLeftSolid, LiaArrowRightSolid } from 'react-icons/lia';
-import chicken from '../../../assets/c1.png'
-import avocado from '../../../assets/f7.png'
-import watremelon from '../../../assets/fruits.png'
-import groceries from '../../../assets/groceries.png'
-import apple from '../../../assets/apple.png'
-import c6 from '../../../assets/c6.png'
-import rating from '../../../assets/rating.png'
+import apple from '../../../assets/apple.png';
+import chicken from '../../../assets/c1.png';
+import c6 from '../../../assets/c6.png';
+import avocado from '../../../assets/f7.png';
+import watremelon from '../../../assets/fruits.png';
+import groceries from '../../../assets/groceries.png';
+import rating from '../../../assets/rating.png';
+import './Blog.scss';
 
 
 
