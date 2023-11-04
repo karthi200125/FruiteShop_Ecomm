@@ -1,0 +1,49 @@
+.home {
+    width: 100%;
+    min-height: 100vh;
+    margin-top: 100px;
+}
+
+.homecon {
+    min-height: 100vh;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.cards {
+    width: 100%;
+    columns: 5;
+    column-gap: 0px;
+    margin: 20px auto;
+}
+
+.searchcon {
+    height: 80px;
+    width: 100%;
+}
+
+.noresult {
+    position: absolute;
+    right: 50%;
+    left: 50%;
+    width: 300px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+@media screen and (max-width:480px) {
+    .home{
+        margin-top: 50px;
+    }
+    .cards {
+        columns: 2;
+        column-gap: 10px;
+    }
+
+    .homecon {
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 10px;
+    }
+}
+
