@@ -74,8 +74,8 @@ const MobileNav = ({ isOpen, onclose, OpenProfile }) => {
                 {/* <div className="navsearch">
                     <input type="text" placeholder='Search here' />
                     <GoSearch />
-                </div> */}
-                <img src={user?.profilePic || noprofile} alt="" onClick={handleprofileopen} />
+                </div> */}                 
+                {user !== null &&<img src={user?.profilePic || noprofile} alt="" onClick={handleprofileopen} />}
             </div>
 
             <div className="bg">
@@ -98,6 +98,12 @@ const MobileNav = ({ isOpen, onclose, OpenProfile }) => {
                             {cart?.length > 0 && <span>{cart?.length}</span>}
                         </div></Link>
                 </div>
+                {!user &&
+                    <div className="signcon">
+                        <Link to='/login'><button>Sign in</button></Link>
+                        <Link to="/register"><button>Sign up</button></Link>
+                    </div>
+                }
                 {user && <button onClick={handlelogout} className='mobnavlogout'><IoIosLogOut size={20} />logout</button>}
             </div>
 
