@@ -81,6 +81,32 @@
         top: 75%;
         gap: 20px;
 
+        .signcon {
+                        
+            @include mobile {                
+                display: flex;
+                align-items: center;
+                justify-content: center;                
+                padding-left: 20%;
+            }
+
+            button {
+                padding: 10px;
+                background-color: transparent;
+                color: white !important;
+            }
+
+            &>:nth-child(1) {
+                background-color: rgba(49, 47, 47, 0.8) !important;
+                border-radius: 25px;
+            }
+
+            &>:nth-child(2) {
+                background-color: rgba(255, 0, 0, 0.8) !important;
+                border-radius: 25px;
+            }
+        }
+
         .icons {
             display: flex;
             align-items: center;
