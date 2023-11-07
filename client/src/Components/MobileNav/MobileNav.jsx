@@ -87,6 +87,7 @@ const MobileNav = ({ isOpen, onclose, OpenProfile }) => {
             </div>
 
             <div className="bottom">
+                {user && 
                 <div className="icons">
                     <Link to="/fav">
                         <div className='iconbox'>
@@ -98,6 +99,7 @@ const MobileNav = ({ isOpen, onclose, OpenProfile }) => {
                             {cart?.length > 0 && <span>{cart?.length}</span>}
                         </div></Link>
                 </div>
+                }
                 {!user &&
                     <div className="signcon">
                         <Link to='/login'><button>Sign in</button></Link>
