@@ -128,6 +128,7 @@ console.log("from navber",user?.data)
                     </div>
                 </div>
                 :
+                user !== null &&
                 <div className="signcon">
                     <Link to='/login'><button>Sign in</button></Link>
                     <Link to="/register"><button>Sign up</button></Link>
