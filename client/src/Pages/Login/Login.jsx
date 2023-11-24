@@ -8,6 +8,7 @@ import { apirequest } from '../../Utils/ApiRequest';
 import './Login.scss';
 import { addToCart } from '../../Redux/cartslice';
 import logo from '../../assets/logo4.png'
+import LoadingSpinner from '../../Components/LoadingSpinner/LoadingSpinner';
 
 const Login = () => {
   const [input, setInput] = useState({
@@ -86,7 +87,7 @@ const Login = () => {
                 <Link to='/register' className='clickhere'>Click Here</Link>
               </span>
             </p>
-            <button type='submit'>{isloading ? "please Wait" : "Sign in"}</button>
+            <button type='submit'>{isloading ? <LoadingSpinner/> : "Sign in"}</button>
           </div>
           <div className='btm'>
             <div className='line'>
