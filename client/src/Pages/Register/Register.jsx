@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import apirequest from '../../Utils/ApiRequest';
 import logo from '../../assets/logo4.png';
 import './Register.scss';
+import LoadingSpinner from '../../Components/LoadingSpinner/LoadingSpinner';
 
 const Register = () => {
   const [input, setInput] = useState({
@@ -84,7 +85,7 @@ const Register = () => {
             <p>
               Don You have An Account? <span><Link to='/login' className='clickhere'>Click Here</Link></span>
             </p>
-            <button type='submit'>{isloading ? "please Wait" : "Sign up"}</button>
+            <button type='submit'>{isloading ? <LoadingSpinner/> : "Sign up"}</button>
           </div>
           <div className='btm'>
             <div className='line'>
