@@ -5,11 +5,12 @@ import Carousel from '../../../Components/Carosoul/Carosl';
 import Product from '../../../Components/Product/Product';
 import useGetData from '../../../Utils/fetch';
 import './FeaturedProducts.scss';
+import LoadingSpinner from '../../../Components/LoadingSpinner/LoadingSpinner';
 
 const FeaturedProducts = () => {
 
     const data = useGetData("/product/getallProducts")
-    
+
     const withoufruites = data?.data?.allproducts?.filter((item) => item.category !== "fruits")
 
     return (
@@ -21,9 +22,14 @@ const FeaturedProducts = () => {
             <>
                 <h1 className='featuredproductstitle'><b>Featured</b> Products</h1>
                 <div className="products">
-                    {withoufruites?.slice(0, 8).map((data) => (
-                        <Product key={data._id} data={data} />
-                    ))}
+                    {!withoufruites ?
+                        <div className="fetching">
+                            <LoadingSpinner />  <span>Loading ...</span>
+                        </div>
+                        :
+                        withoufruites?.slice(0, 8).map((data) => (
+                            <Product key={data._id} data={data} />
+                        ))}
                 </div>
                 <Link to="/shop"><Btn title={"Show All"} /></Link>
             </>
