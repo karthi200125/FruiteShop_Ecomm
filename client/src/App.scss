@@ -55,6 +55,14 @@ section {
 color: #FF0000;
 }
 
+.fetching {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
 @mixin linehover {
   &::after {
     content: '';
