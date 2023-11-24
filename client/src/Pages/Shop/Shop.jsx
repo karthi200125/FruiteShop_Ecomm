@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BsSearch } from 'react-icons/bs';
+import LoadingSpinner from '../../Components/LoadingSpinner/LoadingSpinner';
 import Navbar from '../../Components/Navbar/Navbar';
 import Product from '../../Components/Product/Product';
 import useGetData from '../../Utils/fetch';
@@ -74,9 +75,14 @@ const Shop = () => {
         <h1 className='shoptitle'>{cat || 'All Products'}</h1>
 
         <div className='products'>
-          {searchProducts?.map((data) => (
-            <Product key={data._id} data={data} />
-          ))}
+          {!searchProducts ?
+            <div className="fetching">
+              <LoadingSpinner />  <span>Loading ...</span>
+            </div>
+            :
+            searchProducts?.map((data) => (
+              <Product key={data._id} data={data} />
+            ))}
         </div>
       </div>
     </div>
