@@ -32,7 +32,7 @@ const Carousel = ({ allProducts }) => {
             </div>
             <div className="carousel">
                 <div className="cards" style={{ transform: `translateX(${translateX}px)` }}>
-                    {onlyfruits ?
+                    {!onlyfruits ?
                         <div className="fetching">
                             <LoadingSpinner />  <span>Loading ...</span>
                         </div>
